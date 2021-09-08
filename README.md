@@ -14,8 +14,13 @@
 
 This sample demonstrates how to sync Revit camera to Forge viewer.
 
+**Note. Revit camera and Forge Viewer camera are totally different. So, the result might not be perfectly matched.**
+
 ## Thumbnail
 
+[![](http://img.youtube.com/vi/Sl4ZM8GRfsg/0.jpg)](http://www.youtube.com/watch?v=Sl4ZM8GRfsg "Demo sync Revit camera to Forge Viewer")
+
+[Click here or click on the above picture to view the video](http://www.youtube.com/watch?v=Sl4ZM8GRfsg)
 
 # Setup
 

@@ -69,7 +69,7 @@ namespace ForgeRevitCameraSyncAddin
             System.Diagnostics.Trace.WriteLine("Sending view camera info to Forge");
             var data = JsonConvert.SerializeObject(this.cameraDefinition, this.jsonSerializerSettings);
 
-            var url = "http://192.168.8.7:3000/api/forge/views/sync";
+            var url = "http://1ocalhost:3000/api/forge/views/sync";
             
 
             try
