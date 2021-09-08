@@ -144,7 +144,8 @@ namespace ForgeRevitCameraSyncAddin
             double fov = 0;
             if (isPerspective)
             {
-                fov = 2 * Math.Atan(cameraInfo.HorizontalExtent) / (2 * cameraInfo.TargetDistance);
+                // https://thebuildingcoder.typepad.com/blog/2020/04/revit-camera-fov-forge-partner-talks-and-jobs.html
+                fov = 2 * Math.Atan(cameraInfo.HorizontalExtent / (2 * cameraInfo.TargetDistance)) * 180 / Math.PI;
             }
 
             var aspect = cameraInfo.HorizontalExtent / cameraInfo.VerticalExtent;
