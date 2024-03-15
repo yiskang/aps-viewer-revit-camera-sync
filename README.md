@@ -18,9 +18,9 @@ This sample demonstrates how to sync camera state between Revit and APS viewer.
 
 ## Thumbnail
 
-[![](http://img.youtube.com/vi/97jYhQu9j-E/0.jpg)](http://www.youtube.com/watch?v=97jYhQu9j-E "Demo sync Revit camera to Forge Viewer")
+[![](http://img.youtube.com/vi/ejGGOWkqzTE/0.jpg)](http://www.youtube.com/watch?v=ejGGOWkqzTE "Demo sync camera between Revit and APS Viewer")
 
-[Click here or click on the above picture to view the video](http://www.youtube.com/watch?v=97jYhQu9j-E)
+[Click here or click on the above picture to view the video](http://www.youtube.com/watch?v=ejGGOWkqzTE)
 
 
 # License
