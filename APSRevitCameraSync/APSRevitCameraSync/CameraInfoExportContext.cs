@@ -179,10 +179,28 @@ namespace APSRevitCameraSync
             XYZ target = viewCenter;
 
             XYZ diagVector = corner1 - target;
-            double dist = corner1.DistanceTo(viewCenter) / 2;
+            double dist = corner1.DistanceTo(viewCenter);
             var orthoHeight = dist * Math.Sin(diagVector.AngleTo(rightDirection)) * 2;
 
             eye = target - forwardDirection * orthoHeight;
+
+            // Revit isometric view's target value would contain infinite value which is invalid to APS Viewer scene.
+            // So, using ray casting to set camera target on the nearsest object and recalculate camera postiion.
+            if (!isPerspective)
+            {
+                var refIntersector = new ReferenceIntersector(view3d);
+                XYZ rayDirection = new XYZ(forwardDirection.X, forwardDirection.Y, forwardDirection.Z);
+                XYZ rayOrigin = new XYZ(viewCenter.X, viewCenter.Y, viewCenter.Z);
+                ReferenceWithContext referenceWithContext = refIntersector.FindNearest(rayOrigin, rayDirection);
+
+                Reference hitResult = referenceWithContext.GetReference();
+                if (hitResult != null)
+                {
+                    XYZ intersection = hitResult.GlobalPoint;
+                    target = intersection;
+                    eye = target - forwardDirection * orthoHeight;
+                }
+            }
 
             var cameraDef = new WebViewerViewState
             {
